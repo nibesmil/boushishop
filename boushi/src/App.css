@@ -1,0 +1,188 @@
+.App {
+  text-align: center;
+}
+
+.black-nav {
+  background: black;
+  color: white;
+  padding: 20px;
+}
+
+.black-nav h4 {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 12px 0;
+}
+
+.search-box {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.search-box input {
+  width: 60%;
+  max-width: 400px;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.category-nav {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 15px;
+}
+
+.category-nav span {
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.category-nav span:hover {
+  background: #f2f2f2;
+}
+
+/* 모자 리스트 전체 영역 */
+.boushi-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 30px 20px;
+}
+
+/* 각 모자 카드 */
+.boushi {
+  width: 220px;             /* ⭐ 카드 폭 고정 → 사진이 더 이상 커지지 않음 */
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  background: #fff;
+}
+
+/* 카드 안의 이미지 */
+.boushi img {
+  width: 100%;
+  height: 200px;            /* 쇼핑몰 느낌으로 일정한 높이 */
+  object-fit: cover;        /* 비율 유지하면서 박스에 꽉 채우기 */
+  border-radius: 8px;
+}
+
+/* 제목 텍스트 */
+.boushi p {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.model {
+  text-align: left;      /* ⭐ 왼쪽 정렬 */
+  padding: 20px;
+  margin-top: 40px;
+  margin-left: 20px;     /* ⭐ 왼쪽으로 위치 이동 */
+  color: #555;
+  font-size: 14px;
+}
+
+.detail {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px 40px;
+  position: relative; /* ⭐ 버튼 배치를 위해 추가 */
+}
+
+
+.detail-inner {
+  position: relative; /* ⭐ 버튼이 이 박스 기준으로 절대 위치 */
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.back-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.detail-inner img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.detail-text {
+  flex: 1;
+  min-width: 240px;
+}
+
+.detail-text h2 {
+  margin: 0 0 8px;
+}
+
+.detail-text h3 {
+  margin: 0 0 16px;
+  color: #555;
+}
+
+.detail-price {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.detail-desc {
+  color: #666;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
