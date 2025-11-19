@@ -3,19 +3,21 @@
 }
 
 .black-nav {
-  background: black;
-  color: white;
-  padding: 20px;
+  background-color: #1E1E1E;
+  padding: 18px;
+  text-align: center;
+  border-bottom: 3px solid #FDE4A9; /* 빈티지노랑 포인트 */
 }
 
 .black-nav h4 {
-  font-size: 30px;
-  font-weight: bold;
-  color: white;
-  text-align: center;
   margin: 0;
-  padding: 12px 0;
+  font-size: 26px;
+  letter-spacing: 2px; /* 레트로 느낌 */
+  color: #FFF5D6;       /* 아이보리톤 */
+  cursor: pointer;
+  text-shadow: 1px 1px #E63946; /* 레트로 빨강 그림자 */
 }
+
 
 .search-box {
   margin: 20px 0;
@@ -50,6 +52,28 @@
 .category-nav span:hover {
   background: #f2f2f2;
 }
+
+.sort-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.sort-box button {
+  padding: 6px 12px;
+  border: 2px solid #1E1E1E;
+  background: #FFF5D6;
+  font-family: "DotGothic16";
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.sort-box button:hover {
+  background: #FDE4A9;
+  transform: translateY(-2px);
+}
+
 
 /* 모자 리스트 전체 영역 */
 .boushi-list {
@@ -136,21 +160,31 @@
   max-width: 400px;
 }
 
-.detail-text h2,
-.detail-text h3,
-.detail-text p {
-  text-align: center;
+.detail-text h2 {
+  color: #E63946;
+  font-size: 28px;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px #FFF5D6;
+}
+
+.detail-text h3 {
+  color: #1E1E1E;
+  letter-spacing: 1px;
 }
 
 .detail-price {
-  font-weight: 700;
-  margin-bottom: 12px;
+  background: #FDE4A9;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  border: 2px dashed #E63946;
 }
 
 .detail-desc {
-  color: #666;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.5;
   white-space: pre-line;
+  color: #3A3A3A;
 }
 
 .detail-buttons {

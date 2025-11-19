@@ -95,7 +95,7 @@ const products = [
   },
   {
     id: 11,
-    category: "etc",
+    category: "acc",
     img: "/img/몽벨.jpg",
     brand: "mont-bell",
     name: "몽벨 트레킹 선글라스 실버 메탈릭 라이트 그레이",
@@ -104,50 +104,93 @@ const products = [
   },
   {
     id: 12,
-    category: "etc",
+    category: "acc",
     img: "/img/리끌로우.jpg",
     brand: "RECLOW",
     name: "리끌로우 블루라이트 반무테 안경",
     price: "35,000 Won",
     desc: "Size : OS\nCondition : 9/10\n이 안경을 착용하면 똑똑해보입니다. 어떻게 아냐고요?\n사실 저도 잘 모르겠습니다.\n저렴하게 급처분합니다.",
   },
+  {
+    id: 13,
+    category: "acc",
+    img: "/img/휴메.jpg",
+    brand: "Human Made",
+    name: "휴먼 메이드 하트 네클리스 레드",
+    price: "90,000 Won",
+    desc: "Size : OS\nCondition : 10/10\n휴먼 메이드 사의 매력적인 하트 목걸이입니다.\n아무래도 남자보단 여자한테 더 잘 어울릴 것 같군요.\n좋은 주인을 만났으면 합니다.",
+  },
+  {
+    id: 14,
+    category: "acc",
+    img: "/img/디젤.jpg",
+    brand: "DIESEL",
+    name: "디젤 Dx1421 투톤 스테인리스 스틸 펜던트 네클리스 실버",
+    price: "100,000 Won",
+    desc: "Size : OS\nCondition : 10/10\n인기 많은 제품입니다.\n솔직히 실버보단 골드가 더 낫더군요.\n상당히 매력적인 제품입니다.",
+  },
+  {
+    id: 15,
+    category: "acc",
+    img: "/img/카시오.jpg",
+    brand: "CASIO",
+    name: "카시오 데이터뱅크 전자시계 DBC-611",
+    price: "50,000 Won",
+    desc: "Size : OS\nCondition : 8/10\n레트로한 무드를 연출하는 카시오 사의 데이터뱅크입니다.\n메탈인 척 하는 레진입니다.\n메탈 버전 데이터뱅크는 중고가만 50이 넘어가니 참고바랍니다.",
+  },
 ];
 
 function App() {
   const [category, setCategory] = useState("all");
   const [search, setSearch] = useState("");
+  const [sortType, setSortType] = useState("none"); // 🔹 정렬 타입 상태
   const navigate = useNavigate();
 
-  const filteredProducts = products.filter((p) => {
-    const matchesCategory =
-      category === "all" ? true : p.category === category;
+  // 🔹 필터 + 정렬 적용
+  const filteredProducts = products
+    .filter((p) => {
+      const matchesCategory =
+        category === "all" ? true : p.category === category;
 
-    const matchesSearch =
-      p.name.toLowerCase().includes(search.toLowerCase()) ||
-      p.brand.toLowerCase().includes(search.toLowerCase());
+      const matchesSearch =
+        p.name.toLowerCase().includes(search.toLowerCase()) ||
+        p.brand.toLowerCase().includes(search.toLowerCase());
 
-    return matchesCategory && matchesSearch;
-  });
+      return matchesCategory && matchesSearch;
+    })
+    .sort((a, b) => {
+      if (sortType === "name") {
+        return a.name.localeCompare(b.name); // 이름순 정렬
+      }
+      if (sortType === "price") {
+        const numA = parseInt(a.price.replace(/[^0-9]/g, ""), 10);
+        const numB = parseInt(b.price.replace(/[^0-9]/g, ""), 10);
+        return numA - numB; // 가격 낮은 순
+      }
+      return 0; // 정렬 안 함
+    });
 
   return (
     <div className="App">
       <div className="black-nav">
-      <h4
-  className="logo"
-  style={{ cursor: "pointer" }}
-  onClick={() => {
-    setCategory("all");
-    setSearch("");
-    navigate("/");
-  }}
->
-  boushishop ぼうし
-</h4>
+        <h4
+          className="logo"
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            setCategory("all");
+            setSearch("");
+            setSortType("none");
+            navigate("/");
+          }}
+        >
+          boushishop ぼうし
+        </h4>
+      </div>
 
-</div>
       <div className="category-nav">
         <span onClick={() => setCategory("all")}>All</span>
         <span onClick={() => setCategory("cap")}>Cap</span>
+        <span onClick={() => setCategory("acc")}>ACC</span>
         <span onClick={() => setCategory("etc")}>etc...</span>
       </div>
 
@@ -158,6 +201,12 @@ function App() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+      </div>
+
+      {/* 🔹 정렬 버튼 영역 */}
+      <div className="sort-box">
+        <button onClick={() => setSortType("name")}>이름순 정렬</button>
+        <button onClick={() => setSortType("price")}>가격순 정렬</button>
       </div>
 
       {/* / → 리스트,  /product/:id → 상세 */}
@@ -241,7 +290,7 @@ function ProductDetail() {
     <div className="detail">
       <div className="detail-inner">
         <button className="back-btn" onClick={() => navigate(-1)}>
-          ← 뒤로가기
+          ← Back
         </button>
 
         <img src={product.img} alt={product.name} />
@@ -255,13 +304,13 @@ function ProductDetail() {
           <div className="button-center">
             <div className="detail-buttons">
               <button className="btn inquiry-btn" onClick={handleInquiry}>
-                문의하기
+                CONTACT US
               </button>
               <button className="btn buy-btn" onClick={handlePurchase}>
-                구매하기
+                BUY IT NOW
               </button>
               <button className="btn cart-btn" onClick={handleAddToCart}>
-                장바구니
+                ADD TO CART
               </button>
             </div>
           </div>
