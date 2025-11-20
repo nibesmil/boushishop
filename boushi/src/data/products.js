@@ -7,7 +7,7 @@ const products = [
       brand: "Conichiwa bonjour",
       name: "곤니치와봉쥬르 올림픽 볼캡",
       price: "20,000 Won",
-      desc: "Size : OS\nCondition : 10/10\n레트로한 디자인의 볼캡입니다.\n",
+      desc: "Size : OS\nCondition : 10/10\n레트로한 디자인의 볼캡입니다.\n주인장한테는 잘 안 어울리네요 :-(.\n",
     },
     {
       id: 2,
@@ -16,7 +16,7 @@ const products = [
       brand: "Nike ACG",
       name: "나이키 ACG 나일론 볼캡",
       price: "45,000 Won",
-      desc: "Size : OS\nCondition : 8/10\n나일론 소재로 제작되어 편하게 착용하기 좋습니다.\n",
+      desc: "Size : OS\nCondition : 8/10\n나일론 소재로 제작되어 편하게 착용하기 좋습니다.\n가격 거품 많이 꺼졌던데 저렴하게 만나보세요~.",
     },
     {
       id: 3,
@@ -25,7 +25,7 @@ const products = [
       brand: "thecoldestmoment",
       name: "더콜디스트모먼트 볼캡",
       price: "20,000 Won",
-      desc: "Size : 58.5\nCondition : 8/10\n무신사 품절 제품이고, 대두인 사람도 편하게 착용 가능합니다.\n",
+      desc: "Size : 58.5\nCondition : 8/10\n무신사 품절 제품이고, 대두인 사람도 편하게 착용 가능합니다.\n빈티지하고 레트로한 무드를 연출합니다.",
     },
     {
       id: 4,
@@ -34,7 +34,7 @@ const products = [
       brand: "Musinsa Standard",
       name: "무신사 스탠다드 이어플랩 볼캡",
       price: "15,000 Won",
-      desc: "Size : OS\nCondition : 10/10\n무난한 이어플랩 볼캡입니다.\n귀를 감싸주어 따뜻한 착용감을 선사합니다.",
+      desc: "Size : OS\nCondition : 10/10\n무난한 이어플랩 볼캡입니다.\n귀를 감싸주어 따뜻한 착용감을 선사합니다.\n추운 날 사용하면 당신도 핫보이 or 핫걸~ (따뜻하다는 뜻)",
     },
     {
       id: 5,
@@ -43,7 +43,7 @@ const products = [
       brand: "CEEMWORKS",
       name: "심웍스 트러커 볼캡",
       price: "25,000 Won",
-      desc: "Size : OS\nCondition : 9/10\n대두인 사람도 편한 착용이 가능하고, 레트로한 무드가 인상적인 볼캡입니다.",
+      desc: "Size : OS\nCondition : 9/10\n대두인 사람도 편한 착용이 가능하고, 레트로한 무드가 인상적인 볼캡입니다.\n이걸 쓰고 디트로이트 출신 트러커가 되어보세요.",
     },
     {
       id: 6,
@@ -52,7 +52,7 @@ const products = [
       brand: "New Era",
       name: "뉴에라 시카고 화이트삭스 스냅백",
       price: "40,000 Won",
-      desc: "Size : M-L\nCondition : 9/10\n앞으로 쓰는 것 보단 뒤로 쓰는 것이 훨씬 멋드러집니다.\n이 모자를 쓰고 갱스터가 되어보세요.",
+      desc: "Size : M-L\nCondition : 9/10\n앞으로 쓰는 것 보단 뒤로 쓰는 것이 훨씬 멋드러집니다.\n이 모자를 쓰고 갱스터가 되어보세요.\n진짜 뉴욕에서 쓰고 다닐 시 갱으로 오해받을 수 있으니 주의.",
     },
     {
       id: 7,
@@ -70,7 +70,7 @@ const products = [
       brand: "OAKLEY",
       name: "오클리 47브랜드 볼캡",
       price: "50,000 Won",
-      desc: "Size : OS\nCondition : 9/10\n무난무난하게 이쁜 모자입니다, 가운데 오클리 빅로고가 매력적이예요.",
+      desc: "Size : OS\nCondition : 9/10\n무난무난하게 이쁜 모자입니다, 가운데 오클리 빅로고가 매력적이예요.\n얘도 가격 거품 많이 꺼졌으니 장만해두시면 좋을듯~",
     },
     {
       id: 9,
@@ -124,7 +124,7 @@ const products = [
       brand: "DIESEL",
       name: "디젤 Dx1421 투톤 스테인리스 스틸 펜던트 네클리스 실버",
       price: "100,000 Won",
-      desc: "Size : OS\nCondition : 10/10\n인기 많은 제품입니다.\n솔직히 실버보단 골드가 더 낫더군요.\n상당히 매력적인 제품입니다.",
+      desc: "Size : OS\nCondition : 10/10\n인기 많은 제품입니다.\n솔직히 실버보단 골드가 더 낫더군요.\n상당히 매력적인 제품입니다.\n얘도 요즘 많이 유행하던데 저렴하게 장만해보세요~",
     },
     {
       id: 15,
