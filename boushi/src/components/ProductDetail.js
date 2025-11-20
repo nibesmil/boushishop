@@ -1,5 +1,6 @@
 // src/components/ProductDetail.js
 import { useParams, useNavigate } from "react-router-dom";
+import { useState, useRef } from "react";
 import products from "../data/products";
 
 function ProductDetail() {
@@ -7,10 +8,37 @@ function ProductDetail() {
   const navigate = useNavigate();
   const product = products.find((p) => p.id === Number(id));
 
+  // 🔍 돋보기 관련 상태 + ref
+  const [lensPos, setLensPos] = useState({ x: 0, y: 0, visible: false });
+  const imgRef = useRef(null);
+
   if (!product) {
     return <div style={{ padding: 20 }}>상품을 찾을 수 없습니다.</div>;
   }
 
+  /* ------------------ 돋보기 관련 함수 ------------------ */
+  const handleMouseMove = (e) => {
+    const img = imgRef.current;
+    const rect = img.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    // 마우스가 이미지 영역 안에 있을 때만 렌즈 보이기
+    if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+      setLensPos({ x, y, visible: true });
+    } else {
+      setLensPos((prev) => ({ ...prev, visible: false }));
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setLensPos((prev) => ({ ...prev, visible: false }));
+  };
+
+  /* ------------------ 기본 기능들 ------------------ */
+
+  // 장바구니 담기
   const handleAddToCart = () => {
     const existing = JSON.parse(localStorage.getItem("cart") || "[]");
     const alreadyInCart = existing.some((item) => item.id === product.id);
@@ -24,6 +52,7 @@ function ProductDetail() {
     }
   };
 
+  // 문의하기
   const handleInquiry = () => {
     const subject = encodeURIComponent(`[문의] ${product.name}`);
     const body = encodeURIComponent(
@@ -32,11 +61,14 @@ function ProductDetail() {
     window.location.href = `mailto:20201092@vision.hoseo.edu?subject=${subject}&body=${body}`;
   };
 
-  const handlePurchase = () => {
-    alert(`'${product.name}' 구매 진행 페이지로 이동한다고 가정 🧾`);
-    // 나중에 결제 페이지 만들면
-    // navigate(`/checkout/${product.id}`);
+  // 구매하기
+// 구매하기
+const handlePurchase = () => {
+    navigate(`/checkout/${product.id}`);
   };
+  
+
+  /* ------------------------------------------------ */
 
   return (
     <div className="detail">
@@ -45,8 +77,35 @@ function ProductDetail() {
           ← Back
         </button>
 
-        <img src={product.img} alt={product.name} />
+        {/* 🔥 돋보기용 이미지 전체 영역 */}
+        <div
+          className="zoom-container"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          <img
+            ref={imgRef}
+            src={product.img}
+            alt={product.name}
+            className="zoom-image"
+          />
 
+          {/* 🔍 렌즈 */}
+          {lensPos.visible && (
+            <div
+              className="zoom-lens"
+              style={{
+                top: lensPos.y - 75,
+                left: lensPos.x - 75,
+                backgroundImage: `url(${product.img})`,
+                backgroundSize: "200%", // 확대 배율
+                backgroundPosition: `${-(lensPos.x * 0.5)}px ${-(lensPos.y * 0.5)}px`,
+              }}
+            ></div>
+          )}
+        </div>
+
+        {/* 🔥 기존 텍스트 + 버튼 그대로 유지 */}
         <div className="detail-text">
           <h2>{product.brand}</h2>
           <h3>{product.name}</h3>
