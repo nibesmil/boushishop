@@ -222,6 +222,207 @@
   background-color: #ffcc00;
 }
 
+.zoom-container {
+  position: relative;
+  width: 400px; /* 사진 크기 조절 가능 */
+  overflow: hidden;
+  margin-right: 24px;
+}
+
+.zoom-image {
+  width: 100%;
+  display: block;
+}
+
+/* 🔍 렌즈 */
+.zoom-lens {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.cart {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.cart-list {
+  margin-top: 16px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.cart-info {
+  flex: 1;
+}
+
+.cart-brand {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.cart-name {
+  font-weight: bold;
+}
+
+.cart-price {
+  color: #333;
+}
+
+.cart-remove-btn {
+  border: none;
+  background: #ff7676;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-footer {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.cart-total {
+  font-weight: bold;
+  flex: 1;
+}
+
+.cart-clear-btn,
+.cart-order-btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-clear-btn {
+  background: #ddd;
+}
+
+.cart-order-btn {
+  background: #000;
+  color: #fff;
+}
+
+.checkout {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 16px;
+}
+
+.checkout-box {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* 좌측 상품 미니 카드 */
+.checkout-summary {
+  width: 220px;
+  text-align: center;
+}
+
+.checkout-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.checkout-info {
+  margin-top: 8px;
+}
+
+.checkout-brand {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.checkout-name {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.checkout-price {
+  color: #000;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* 우측 폼 */
+.checkout-form {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkout-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.checkout-form input,
+.checkout-form textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.checkout-total {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.checkout-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.checkout-cancel {
+  background: #ddd;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.checkout-submit {
+  background: black;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
