@@ -1,8 +1,10 @@
 // src/components/ShoppingCart.js
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ShoppingCart() {
   const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate();
 
   // 처음 마운트될 때 localStorage에서 장바구니 불러오기
   useEffect(() => {
@@ -66,7 +68,11 @@ function ShoppingCart() {
             </button>
             <button
               className="cart-order-btn"
-              onClick={() => alert("주문/결제 페이지로 이동한다고 가정 🙂")}
+              onClick={() =>
+                navigate("/checkout/cart", {
+                  state: { items: cartItems }, // ✅ 장바구니 전체를 Checkout으로 전달
+                })
+              }
             >
               주문하기
             </button>
