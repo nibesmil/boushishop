@@ -422,6 +422,185 @@
   cursor: pointer;
 }
 
+/* === 주문 완료 페이지 === */
+
+.order-complete {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.order-complete-title {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.order-complete-sub {
+  color: #777;
+  margin-bottom: 24px;
+}
+
+/* 큰 카드 박스 */
+.order-complete-box {
+  display: flex;
+  gap: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-align: left;
+}
+
+/* 왼쪽 상품 카드 */
+.order-complete-product {
+  flex: 1;
+  border-right: 1px solid #eee;
+  padding-right: 16px;
+}
+
+.order-complete-product h3 {
+  margin-bottom: 12px;
+}
+
+.order-complete-product-info {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.order-complete-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.order-complete-product-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.order-complete-brand {
+  font-size: 13px;
+  color: #999;
+}
+
+.order-complete-name {
+  font-weight: 600;
+}
+
+.order-complete-qty {
+  font-size: 14px;
+  color: #555;
+}
+
+/* 오른쪽 주문/결제 정보 */
+.order-complete-info {
+  flex: 1.2;
+  padding-left: 8px;
+}
+
+.order-complete-info h3 {
+  margin: 8px 0 8px;
+}
+
+.order-complete-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+}
+
+.order-complete-info li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.order-complete-info .label {
+  color: #777;
+  margin-right: 12px;
+}
+
+.order-complete-info .value {
+  font-weight: 500;
+  text-align: right;
+}
+
+/* 금액 영역 */
+.order-complete-price li {
+  border-bottom: none;
+}
+
+.order-complete-price li.final {
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px solid #ddd;
+}
+
+.order-complete-price li.final .value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* 버튼 영역 */
+.order-complete-buttons {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.order-complete-btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.order-complete-btn.primary {
+  background: #222;
+  color: #fff;
+}
+
+.order-complete-btn.primary:hover {
+  background: #000;
+}
+
+.order-complete-btn.ghost {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.order-complete-btn.ghost:hover {
+  background: #e8e8e8;
+}
+
+/* 반응형 - 모바일에서는 세로 배치 */
+@media (max-width: 768px) {
+  .order-complete-box {
+    flex-direction: column;
+  }
+
+  .order-complete-product {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding-right: 0;
+    padding-bottom: 16px;
+  }
+
+  .order-complete-info {
+    padding-left: 0;
+  }
+}
+
 
 .App-logo {
   height: 40vmin;
